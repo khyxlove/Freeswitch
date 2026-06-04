@@ -6,17 +6,26 @@
    # 将其加入你的常用网桥（例如 bridge）
    /interface/bridge/port add bridge=bridge interface=veth_fs
 3. 设置环境变量 根据你的需求定义音频文件和采样率：
+~~~
    /container/envs/add name=fs_env key=SOUND_RATES value="8000:16000"
    /container/envs/add name=fs_env key=SOUND_TYPES value="music:zh-cn-sinmei"
-4. 准备挂载目录（可选但建议）
+7.23.1
+   /container/envs/add list=fs_env key=SOUND_RATES value="8000:16000"
+   /container/envs/add list=fs_env key=SOUND_TYPES value="music:zh-cn-sinmei"
+~~~
+5. 准备挂载目录（可选但建议）
     FreeSwitch 需要存储配置和音频。在 ROS 的磁盘（如 slot1 或 flash）上创建目录：
+   ~~~
    /container mounts
    add dst=/etc/freeswitch name=freeswitch src=/data/freeswitch
    add dst=/usr/share/freeswitch/sounds name=freeswitch-sounds src=/data/freeswitch-sounds
-5. 配置防火墙端口转发 (NAT)
+   ~~~
+7. 配置防火墙端口转发 (NAT)
+~~~
    /ip/firewall/nat/add chain=dstnat dst-port=5060 protocol=udp action=dst-nat to-addresses=172.17.0.2
    /ip/firewall/nat/add chain=dstnat dst-port=16384-32768 protocol=udp action=dst-nat to-addresses=172.17.0.2
-6. 启动容器 /container/start [find where remote-image~"freeswitch"]
+~~~
+9. 启动容器 /container/start [find where remote-image~"freeswitch"]
 
 - 特别提示
 - 控制台访问：在 ROS 中，你可以使用 /container/shell 0 进入容器命令行，但由于此镜像极度精简，可能只有最基础的 shell。
