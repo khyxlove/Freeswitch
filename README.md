@@ -18,7 +18,12 @@
    ~~~
    /container mounts
    add dst=/etc/freeswitch name=freeswitch src=/data/freeswitch
-   add dst=/usr/share/freeswitch/sounds name=freeswitch-sounds src=/data/freeswitch-sounds
+   add dst=/usr/share/freeswitch/sounds name=freeswitch src=/data/freeswitch-sounds
+
+   7.231
+   /container mounts
+   add dst=/etc/freeswitch list=freeswitch src=/data/freeswitch
+   add dst=/usr/share/freeswitch/sounds list=freeswitch src=/data/freeswitch-sounds
    ~~~
 7. 配置防火墙端口转发 (NAT)
 ~~~
