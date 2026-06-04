@@ -27,8 +27,15 @@
    ~~~
 7. 配置防火墙端口转发 (NAT)
 ~~~
-   /ip/firewall/nat/add chain=dstnat dst-port=5060 protocol=udp action=dst-nat to-addresses=172.17.0.2
-   /ip/firewall/nat/add chain=dstnat dst-port=16384-32768 protocol=udp action=dst-nat to-addresses=172.17.0.2
+/ip/firewall/nat/add chain=dstnat dst-port=5060 protocol=udp action=dst-nat to-addresses=172.17.0.2
+/ip/firewall/nat/add chain=dstnat dst-port=16384-32768 protocol=udp action=dst-nat to-addresses=172.17.0.2
+
+/ip/firewall/nat/
+add action=dst-nat chain=dstnat dst-port=5060 in-interface=pppoe-out101 protocol=udp to-addresses=10.20.0.200
+add action=dst-nat chain=dstnat dst-port=16384-32768 in-interface=pppoe-out101 protocol=udp to-addresses=10.20.0.200
+
+/ip/firewall/mangle
+add action=mark-routing chain=prerouting dst-port=5060,16384-32768 new-routing-mark=pppoe-out101 passthrough=no protocol=udp src-address=10.20.0.200
 ~~~
 9. 启动容器 /container/start [find where remote-image~"freeswitch"]
 
