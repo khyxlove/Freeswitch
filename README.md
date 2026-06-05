@@ -99,3 +99,25 @@ directory/default/1000.xml 修改后在 fs_cli 中输入reloadxml
 
 在 fs_cli 中输入reloadxml
 ~~~
+
+##　音乐文件
+~~~
+/tool fetch url="https://raw.githubusercontent.com/khyxlove/Freeswitch/refs/heads/main/wav/ivr1.wav"
+
+https://raw.githubusercontent.com/khyxlove/Freeswitch/refs/heads/main/wav/ivr1.wav
+https://raw.githubusercontent.com/khyxlove/Freeswitch/refs/heads/main/wav/ivr2.wav
+https://raw.githubusercontent.com/khyxlove/Freeswitch/refs/heads/main/wav/moli.wav
+https://raw.githubusercontent.com/khyxlove/Freeswitch/refs/heads/main/wav/ringin.wav
+https://raw.githubusercontent.com/khyxlove/Freeswitch/refs/heads/main/wav/安妮的仙境-纯音乐.wav
+https://raw.githubusercontent.com/khyxlove/Freeswitch/refs/heads/main/wav/暂时无人接听.wav
+https://raw.githubusercontent.com/khyxlove/Freeswitch/refs/heads/main/wav/暂时无法接听.wav
+https://raw.githubusercontent.com/khyxlove/Freeswitch/refs/heads/main/wav/正在为您接通电话-请稍等.wav
+https://raw.githubusercontent.com/khyxlove/Freeswitch/refs/heads/main/wav/正在为您转到前台电话-请稍等.wav
+https://raw.githubusercontent.com/khyxlove/Freeswitch/refs/heads/main/wav/正在通话中.wav
+https://raw.githubusercontent.com/khyxlove/Freeswitch/refs/heads/main/wav/王菲1那英-相约一九九八.wav
+https://raw.githubusercontent.com/khyxlove/Freeswitch/refs/heads/main/wav/电话是空号.wav
+https://raw.githubusercontent.com/khyxlove/Freeswitch/refs/heads/main/wav/萨克斯-茉莉花-铃声.wav
+https://raw.githubusercontent.com/khyxlove/Freeswitch/refs/heads/main/wav/输入超时.wav
+https://raw.githubusercontent.com/khyxlove/Freeswitch/refs/heads/main/wav/输入错误.wav
+https://raw.githubusercontent.com/khyxlove/Freeswitch/refs/heads/main/wav/高胜美-一剪梅.wav
+~~~
